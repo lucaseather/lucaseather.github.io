@@ -1,0 +1,45 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #fff0f5;
+  text-align: center;
+  margin: 0;
+  padding: 1rem;
+}
+
+h1 {
+  color: #d63384;
+  margin-bottom: 1rem;
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: repeat(40, 20px);
+  grid-template-rows: repeat(20, 20px);
+  gap: 2px;
+  justify-content: center;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.cell {
+  width: 20px;
+  height: 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  color: #ff69b4;
+  cursor: pointer;
+  line-height: 20px;
+  text-align: center;
+  user-select: none;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.cell.clicked {
+  background-color: #e0ffff;
+  font-weight: bold;
+}
+
+.cell.bomb {
+  background-color: #ffb6c1;
+}
