@@ -1,45 +1,58 @@
+/* 背景與文字設定 */
 body {
-  font-family: "Arial", sans-serif;
-  background-color: #fff0f5;
-  text-align: center;
+  background-color: #ffeef5;
+  font-family: "微軟正黑體", "Microsoft JhengHei", sans-serif;
   margin: 0;
-  padding: 1rem;
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  overflow-x: hidden; /* 防止左右滑動 */
 }
 
+* {
+  box-sizing: inherit;
+}
+
+/* 標題樣式 */
 h1 {
   color: #d63384;
-  margin-bottom: 1rem;
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
+/* 網格容器 */
 #grid {
   display: grid;
-  grid-template-columns: repeat(40, 20px);
-  grid-template-rows: repeat(20, 20px);
-  gap: 2px;
-  justify-content: center;
+  grid-template-columns: repeat(40, minmax(0, 1fr)); /* 自動等比例縮放 */
+  width: 100%;
+  max-width: 100vw;
   margin: 0 auto;
-  width: fit-content;
+  gap: 1px;
+  aspect-ratio: 2 / 1; /* 讓高度隨寬度調整 */
 }
 
+/* 每個方塊格子 */
 .cell {
-  width: 20px;
-  height: 20px;
-  background-color: #f8f9fa;
+  background-color: white;
   border: 1px solid #ccc;
-  font-size: 14px;
-  color: #ff69b4;
-  cursor: pointer;
-  line-height: 20px;
-  text-align: center;
-  user-select: none;
-  transition: background-color 0.2s, transform 0.1s;
-}
-
-.cell.clicked {
-  background-color: #e0ffff;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: bold;
+  font-size: 1rem;
+  user-select: none;
+  cursor: pointer;
 }
 
-.cell.bomb {
-  background-color: #ffb6c1;
+/* 點擊過的格子（顯示文字） */
+.clicked {
+  background-color: #ffe0ec;
+  color: #d63384;
+}
+
+/* 顯示 STAY SAFE 的格子（畫面字樣） */
+.bomb {
+  background-color: #f69ab5 !important;
 }
