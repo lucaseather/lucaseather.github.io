@@ -1,44 +1,45 @@
-/* 全域設定 */
-* {
-  box-sizing: border-box;
-}
-
 body {
-  background-color: #ffeaf4;
+  font-family: "Arial", sans-serif;
+  background-color: #fff0f5;
+  text-align: center;
   margin: 0;
-  padding: 20px;
-  font-family: 'Microsoft JhengHei', sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
+  padding: 1rem;
 }
 
-/* 標題樣式 */
 h1 {
   color: #d63384;
-  text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
 }
 
-/* 小方格容器 */
 #grid {
   display: grid;
-  grid-template-columns: repeat(20, 20px);
-  grid-template-rows: repeat(10, 20px);
-  gap: 1px;
+  grid-template-columns: repeat(40, 20px);
+  grid-template-rows: repeat(20, 20px);
+  gap: 2px;
+  justify-content: center;
+  margin: 0 auto;
+  width: fit-content;
 }
 
-/* 每一格樣式 */
-.square {
+.cell {
   width: 20px;
   height: 20px;
-  background-color: #ffffff;
+  background-color: #f8f9fa;
   border: 1px solid #ccc;
+  font-size: 14px;
+  color: #ff69b4;
   cursor: pointer;
-  transition: background-color 0.2s;
+  line-height: 20px;
+  text-align: center;
+  user-select: none;
+  transition: background-color 0.2s, transform 0.1s;
 }
 
-.square:hover {
-  background-color: #ffddee;
+.cell.clicked {
+  background-color: #e0ffff;
+  font-weight: bold;
+}
+
+.cell.bomb {
+  background-color: #ffb6c1;
 }
